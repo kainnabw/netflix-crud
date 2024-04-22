@@ -1,0 +1,103 @@
+{
+  "Filmes": [
+    {
+      "id": 1,
+      "capa": "https://www.cineplayers.com/sites/default/files/posters/2020/08/god.jpg",
+      "nome": "O Poderoso Chefão",
+      "genero": "Crime, Drama",
+      "duracao": "175 minutos",
+      "data": "24 de março de 1972",
+      "diretor": "Francis Ford Coppola"
+    },
+    {
+      "id": 2,
+      "capa": "https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png",
+      "nome": "Interestelar",
+      "genero": "Ficção científica, Drama",
+      "duracao": "169 minutos",
+      "data": "7 de novembro de 2014",
+      "diretor": "Christopher Nolan"
+    },
+    {
+      "id": 3,
+      "capa": "https://br.web.img3.acsta.net/medias/nmedia/18/90/95/96/20122166.jpg",
+      "nome": "Clube da Luta",
+      "genero": "Drama, Suspense",
+      "duracao": "140 minutos",
+      "data": "12 de outubro de 1999",
+      "diretor": "David Fincher"
+    },
+    {
+      "id": 4,
+      "capa": "https://br.web.img2.acsta.net/medias/nmedia/18/91/08/82/20128877.JPG",
+      "nome": "Matrix",
+      "genero": "Ficção científica, Ação",
+      "duracao": "136 minutos",
+      "data": "31 de março de 1999",
+      "diretor": "Lana e Lilly Wachowski"
+    },
+    {
+      "id": 5,
+      "capa": "https://upload.wikimedia.org/wikipedia/pt/c/c0/ForrestGumpPoster.jpg",
+      "nome": "Forrest Gump: O Contador de Histórias",
+      "genero": "Drama, Romance",
+      "duracao": "142 minutos",
+      "data": "7 de julho de 1994",
+      "diretor": "Robert Zemeckis"
+    },
+    {
+      "id": 6,
+      "capa": "https://br.web.img3.acsta.net/medias/nmedia/18/92/91/32/20224832.jpg",
+      "nome": "O Senhor dos Anéis: O Retorno do Rei",
+      "genero": "Fantasia, Aventura",
+      "duracao": "201 minutos",
+      "data": "17 de dezembro de 2003",
+      "diretor": "Peter Jackson"
+    },
+    {
+      "id": 7,
+      "capa": "https://upload.wikimedia.org/wikipedia/pt/1/10/CidadedeDeus.jpg",
+      "nome": "Cidade de Deus",
+      "genero": "Drama, Crime",
+      "duracao": "130 minutos",
+      "data": "30 de agosto de 2002",
+      "diretor": "Fernando Meirelles"
+    },
+    {
+      "id": 8,
+      "capa": "https://br.web.img3.acsta.net/medias/nmedia/18/87/32/31/20028688.jpg",
+      "nome": "A Origem",
+      "genero": "Ficção científica, Ação",
+      "duracao": "148 minutos",
+      "data": "16 de julho de 2010",
+      "diretor": "Christopher Nolan"
+    },
+    {
+      "id": 9,
+      "capa": "https://upload.wikimedia.org/wikipedia/pt/thumb/4/44/GladiadorPoster.jpg/230px-GladiadorPoster.jpg",
+      "nome": "Gladiador",
+      "genero": "Ação, Drama",
+      "duracao": "155 minutos",
+      "data": "5 de maio de 2000",
+      "diretor": "Ridley Scott"
+    },
+    {
+      "id": 10,
+      "capa": "https://upload.wikimedia.org/wikipedia/pt/8/82/Pulp_Fiction_cover.jpg",
+      "nome": "Pulp Fiction: Tempo de Violência",
+      "genero": "Crime, Drama",
+      "duracao": "154 minutos",
+      "data": "14 de outubro de 1994",
+      "diretor": "Quentin Tarantino"
+    },
+    {
+      "id": 11,
+      "capa": "https://br.web.img3.acsta.net/pictures/18/02/27/19/16/0695165.jpg",
+      "nome": "jogador numero 1",
+      "genero": "ação",
+      "duracao": "2h 20m",
+      "data": "29 de março de 2018",
+      "diretor": "cléber"
+    }
+  ]
+}

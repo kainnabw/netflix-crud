@@ -1,0 +1,274 @@
+  <form id="filme_form">
+            <h1 class="titulo_form">Cadastro</h1>
+             
+            <label for="id">id filme:</label>
+            <input class="campos" type="number" id="id" required>
+
+            <label for="capa">capa:</label>
+            <input class="campos" type="url" id="capa" required>
+
+            <label for="nome">nome:</label>
+            <input class="campos" type="text" id="nome" required>
+
+            <label for="genero">genero:</label>
+            <input class="campos" type="text" id="genero" required>
+            
+            <label for="duracao">duração:</label>
+            <input class="campos" type="text" id="duracao" required>
+
+            <label for="data">data</label>
+            <input class="campos" type="text" id="data" required>
+
+            <label for="diretor">diretor</label>
+            <input class="campos" type="text" id="diretor" required>
+
+
+
+            <button class="botao" type="submit">Cadastrar</button>
+    
+        </form>
+
+
+
+        <form id="filme_edit">
+            <h1 class="titulo_form">Edição</h1>
+             
+            <label for="id_edit">id filme :</label>
+            <input class="campos" type="number" id="id_edit" required>
+
+            <label for="capa_edit">capa :</label>
+            <input class="campos" type="url" id="capa_edit" required>
+
+            <label for="nome_edit">nome :</label>
+            <input class="campos" type="text" id="nome_edit" required>
+
+            <label for="genero_edit">genero :</label>
+            <input class="campos" type="text" id="genero_edit" required>
+            
+            <label for="duracao_edit">duração :</label>
+            <input class="campos" type="text" id="duracao_edit" required>
+
+            <label for="data_edit">data :</label>
+            <input class="campos" type="text" id="data_edit" required>
+
+            <label for="diretor_edit">diretor :</label>
+            <input class="campos" type="text" id="diretor_edit" required>
+
+
+            <button class="botao" type="submit">Editar</button>
+    
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        versão : 
+
+        const filmeForm = document.getElementById('filme_form');
+const filmeList = document.getElementById('filme_list');
+const filmeEdit = document.getElementById('filme_edit');
+const filmeInfo = document.getElementById('filme_info');
+const botao_cadastro = document.getElementById('botao_cadastro');
+const modal = document.getElementById("myModal");
+const modal_cadastro = document.getElementById("myModalCadastro");
+const modal_edit = document.getElementById("myModaledit");
+const span = document.getElementsByClassName("close")[0];
+const span_edit = document.getElementsByClassName("closeedit")[0];
+const span_cadastro = document.getElementsByClassName("close_cadastro")[0];
+
+botao_cadastro.addEventListener('click', () => {
+    modal_cadastro.classList.add('active')
+});
+
+function listfilmesCapa() {
+    fetch('http://localhost:3002/Filmes')
+    .then(res => res.json())
+    .then(data => {
+        filmeList.innerHTML = '';
+        console.log(data);
+        data.forEach(filmes => {
+            const div = document.createElement('div'); // Container para cada filme        
+            div.style.display = 'flex';
+            div.style.flexDirection = 'column';
+            div.style.marginRight = '10px';
+            
+            const img = document.createElement('img');
+            img.src = filmes.capa;
+            img.style.width = 'auto'; // Defina a largura desejada
+            img.style.height = '260px'; // Mantenha a proporção da imagem
+
+            // Adiciona um event listener ao clicar na imagem
+            img.addEventListener('click', function() {
+                viewFilme(filmes);
+            });
+
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Editar';
+            editButton.classList.add('edit_button'); // Adiciona a classe CSS ao botão de edição
+            editButton.type = 'button';
+            editButton.addEventListener('click', () => {
+                console.log("Botão de edição clicado");
+                modal_edit.classList.add('active')
+
+                // editFilmes(filmes);
+            });
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Excluir';
+            deleteButton.classList.add('delete_button'); // Adiciona a classe CSS ao botão de exclusão
+            deleteButton.addEventListener('click', () => {
+                delete_filme(filmes);
+            });
+
+            div.appendChild(img);
+            div.appendChild(editButton);
+            div.appendChild(deleteButton);
+            
+            filmeList.appendChild(div);
+        });
+    })
+    .catch(error => console.error('Error', error));
+}
+
+function listfilmes(){
+    fetch('http://localhost:3002/Filmes')
+    .then(res => res.json())
+    .then(data => {
+        filmeInfo.innerHTML = '';
+        console.log(data);
+        data.forEach(filmes =>{
+            // const p = document.createElement('p')
+            // p.innerHTML = ` nome: ${filmes.nome}  - genero: ${filmes.genero} - duracao: ${filmes.duracao} - data: ${filmes.data} - diretor: ${filmes.diretor} `
+            // filmeInfo.appendChild(p)
+        });
+    })
+    .catch(error => console.error('Error', error));
+}
+
+// sistema de post
+// e = eventListener dentro da função
+filmeForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
+
+    const id = document.getElementById('id_edit').value;
+    const capa = document.getElementById('capa_edit').value;
+    const nome = document.getElementById('nome_edit').value;
+    const genero = document.getElementById('genero_edit').value;
+    const duracao = document.getElementById('duracao').value;
+    const data = document.getElementById('data').value;
+    const diretor = document.getElementById('diretor').value;
+
+    fetch('http://localhost:3002/Filmes',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({id : id, capa : capa, nome : nome, genero : genero, duracao : duracao, data: data, diretor : diretor})
+    })
+    .then(res => res.json())
+    .then(() => {
+        listfilmes();
+        listfilmes.reset();
+    })
+    .catch(error => console.error('Error', error));
+});
+
+// sistema de update
+function editFilmes(Filmes) {
+    document.getElementById('id_edit').value = Filmes.id;
+    document.getElementById('capa_edit').value = Filmes.capa;
+    document.getElementById('nome_edit').value = Filmes.nome;
+    document.getElementById('genero_edit').value = Filmes.genero;
+    document.getElementById('duracao_edit').value = Filmes.duracao;
+    document.getElementById('data_edit').value = Filmes.data;
+    document.getElementById('diretor_edit').value = Filmes.diretor;
+
+    filmeEdit.addEventListener('submit', edit);
+
+    function edit(e) {
+        e.preventDefault();
+        console.log(document.getElementById('id_edit').value);
+        const id = document.getElementById('id_edit').value;
+        const capa = document.getElementById('capa_edit').value;
+        const nome = document.getElementById('nome_edit').value;
+        const genero = document.getElementById('genero_edit').value;
+        const duracao = document.getElementById('duracao_edit').value;
+        const data = document.getElementById('data_edit').value;
+        const diretor = document.getElementById('diretor_edit').value;
+
+        fetch(`http://localhost:3002/Filmes/${Filmes.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({id : id, capa : capa, nome : nome, genero : genero, duracao : duracao, data: data, diretor : diretor})
+        })
+        .then(res => res.json())
+        .then(() => {
+            listfilmes();
+            filmeEdit.reset();
+        })
+        .catch(error => console.error('Error', error));
+    }
+}
+
+//sistema delete : 
+function delete_filme(Filmes) {
+    fetch(`http://localhost:3002/Filmes/${Filmes.id}`, {
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(response => response.json())
+    .then(console.log("aa"))
+    .catch(error => console.error('Erro:', error));
+}
+
+// Quando o usuário clica no 'x', fecha o modal
+span.onclick = function() {
+    modal.style.display = "none";
+};
+
+// Quando o usuário clica no 'x', fecha o modal de cadastro
+span_cadastro.onclick = function() {
+    modal_cadastro.style.display = "none";
+};
+span_edit.onclick = function() {
+    modal_edit.style.display = "none";
+};
+
+// Quando o usuário clica fora do modal, fecha-o
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.classList.remove('active')
+    } else if (event.target == modal_cadastro) {
+        modal_cadastro.classList.remove('active')
+    }else if (event.target == modal_edit) {
+        modal_edit.classList.remove('active')
+};
+}
+
+
+
+
+function viewFilme(filmes) {
+    filmeInfo.innerHTML = ` nome: ${filmes.nome}  - genero: ${filmes.genero} - duracao: ${filmes.duracao} - data: ${filmes.data} - diretor: ${filmes.diretor} `;
+    modal.classList.add('active')
+    // modal.style.flexDirection = "column";
+}
+
+listfilmesCapa();
+listfilmes();
+
+

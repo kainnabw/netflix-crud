@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Permanent+Marker&display=swap');
+
+header{
+    height: 7vh;
+    width: 100%;
+    background-color:	#000000;
+    color: #db0000;
+   
+}
+.centraliza_header{
+  display: flex;
+}
+
+#botao_cadastro{
+  margin-left: 80%;
+  padding: 5px;
+  height: 30px;
+  margin-top: 3vh;
+}
+#botao_cadastro :hover{
+  border: 1px solid #831010;
+  background-color: transparent;
+  color: white;
+}
+#botao_cadastro :hover{
+  color: black;
+  background-color: grey;
+}
+body{
+  background-color:#000000;
+  color:#db0000;
+  font-family: "Concert One", sans-serif;
+}
+
+main{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .lista{
+  background-color: red;
+  display: flex;
+ }
+ #filme_form{
+  margin-bottom: 2%;
+ }
+ #filme_list{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-left: 8%;
+ }
+ #filme_edit{
+  display: none;
+  margin-bottom: 2%;
+ }
+ #filme_info{
+  text-align: center;
+  flex-direction: column;
+ }
+ .titulo_form{
+  text-align: center;
+  margin-right: 2%;
+  padding-bottom: 5%;
+  font-family: "Concert One", sans-serif;
+ }
+
+
+
+
+
+ button{
+  color: #ffffff;
+  background-color: #db0000;
+    border-radius: 7px;
+    border: 0;
+    padding: 8px;
+    display: inline-block;
+    font-family: "Patua One", serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.7s;
+    font-family: "Concert One", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+ }
+ .botao:hover {
+  border: 1px solid #831010;
+  background-color: transparent;
+  color: white;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* modal informações*/
+
+ /* Estilos para o modal */
+.modal {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed; /* Mantém o modal fixo na tela */
+  z-index: 1; /* Coloca o modal sobre todo o conteúdo */
+  left: 0;
+  top: 0;
+  width: 100%; /* Cobertura total da largura da tela */
+  height: 100%; /* Cobertura total da altura da tela */
+  background-color: rgba(0,0,0,0.5); /* Fundo escuro semi-transparente */
+  overflow: auto; /* Adiciona rolagem se o conteúdo do modal for muito grande */
+}
+
+/* Estilos para o conteúdo do modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Centraliza o modal verticalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Largura do modal */
+  flex-direction: column;
+  
+  
+}
+
+/* Estilos para o botão de fechar */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+/* modal para Cadastros*/
+
+ /* Estilos para o modal */
+ .modal_cadastro, .modaledit {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed; /* Mantém o modal fixo na tela */
+  z-index: 1; /* Coloca o modal sobre todo o conteúdo */
+  left: 0;
+  top: 0;
+  width: 100%; /* Cobertura total da largura da tela */
+  height: 100%; /* Cobertura total da altura da tela */
+  background-color: rgba(0,0,0,0.5); /* Fundo escuro semi-transparente */
+  overflow: auto; /* Adiciona rolagem se o conteúdo do modal for muito grande */
+}
+
+/* Estilos para o conteúdo do modal */
+.modal-cadastro, .modal-contenteedit {
+  background-color: #fefefe;
+  
+  margin: 15% auto; /* Centraliza o modal verticalmente */
+  padding: 20px;
+  flex-direction: column;
+  border: 1px solid #888;
+  width: 23%; /* Largura do modal */
+  height: auto;
+  align-items: center;
+  font-size: 20px;
+  
+  
+}
+
+
+
+label {
+  display: flex;
+  width: 100%;
+  margin-left: 25%;
+}
+
+/* Estilos para o botão de fechar */
+.close_cadastro, .closeedit {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close_cadastro:hover,
+.close_cadastro:focus, .closeedit:hover,
+.closeedit:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+.active {
+  display: block;
+}
+.campos{
+  margin-left: 25%;
+flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+

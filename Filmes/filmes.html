@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+  <link rel="icon" href="../imagens/netflix.png" type="image/x-icon">
+  <link rel="stylesheet" href="filmes.css">
+ 
+
+
+
+</head>
+
+<body>
+  <header>
+    <div class="centraliza_header">
+      <h2>Netflix da shopee</h2>
+      <button id="botao_cadastro">Cadastrar</button>
+    </div>
+
+
+    <div id="myModalCadastro" class="modal_cadastro">
+      <div class="modal-cadastro">
+        <span class="close_cadastro">&times;</span>
+
+        <form id="filme_form">
+          <h1 class="titulo_form">Cadastro</h1>
+
+          <label for="id">id:</label>
+          <input class="campos" type="number" id="id" required>
+
+          <label for="capa">capa:</label>
+          <input class="campos" type="url" id="capa" required>
+
+          <label for="nome">nome:</label>
+          <input class="campos" type="text" id="nome" required>
+
+          <label for="genero">genero:</label>
+          <input class="campos" type="text" id="genero" required>
+
+          <label for="duracao">duração:</label>
+          <input class="campos" type="text" id="duracao" required>
+
+          <label for="data">data</label>
+          <input class="campos" type="text" id="data" required>
+
+          <label for="diretor">diretor</label>
+          <input class="campos" type="text" id="diretor" required>
+
+
+
+          <button id="botao_cadastrar" type="submit">Cadastrar</button>
+
+        </form>
+      </div>
+    </div>
+    <div id="myModaledit" class="modaledit">
+      <div class="modal-contenteedit">
+        <span class="closeedit">&times;</span>
+
+        <form id="filme_form">
+          <h1 class="titulo_form">Edição</h1>
+           
+          <label for="id_edit">id filme :</label>
+          <input class="campos" type="number" id="id_edit" required>
+
+          <label for="capa_edit">capa :</label>
+          <input class="campos" type="url" id="capa_edit" required>
+
+          <label for="nome_edit">nome :</label>
+          <input class="campos" type="text" id="nome_edit" required>
+
+          <label for="genero_edit">genero :</label>
+          <input class="campos" type="text" id="genero_edit" required>
+          
+          <label for="duracao_edit">duração :</label>
+          <input class="campos" type="text" id="duracao_edit" required>
+
+          <label for="data_edit">data :</label>
+          <input class="campos" type="text" id="data_edit" required>
+
+          <label for="diretor_edit">diretor :</label>
+          <input class="campos" type="text" id="diretor_edit" required>
+
+
+          <button class="botao_edit" type="submit">Editar</button>
+  
+      </form>
+
+
+
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  </header>
+
+  <hr>
+  <h1 class="titulo_form">Catálogo</h1>
+  <main>
+      <div id="filme_list"></div>
+  </main>
+
+
+  <!-- O modal de informações -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="filme_info"></p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+  </div>
+
+
+
+
+
+  <script src="/Filmes/filmes.js"></script>
+</body>
+
+</html>
