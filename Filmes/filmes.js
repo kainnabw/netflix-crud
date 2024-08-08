@@ -21,24 +21,24 @@ function listfilmesCapa() {
         filmeList.innerHTML = '';
         console.log(data);
         data.forEach(filmes => {
-            const div = document.createElement('div'); // Container para cada filme        
+            const div = document.createElement('div'); 
             div.style.display = 'flex';
             div.style.flexDirection = 'column';
             div.style.padding = '10px';
             
             const img = document.createElement('img');
             img.src = filmes.capa;
-            img.style.width = '185px'; // Defina a largura desejada
-            img.style.height = '260px'; // Mantenha a proporção da imagem
+            img.style.width = '185px'; 
+            img.style.height = '260px';
 
-            // Adiciona um event listener ao clicar na imagem
+            
             img.addEventListener('click', function() {
                 viewFilme(filmes);
             });
 
             const editButton = document.createElement('button');
             editButton.textContent = 'Editar';
-            editButton.classList.add('botao'); // Adiciona a classe CSS ao botão de edição
+            editButton.classList.add('botao');
             editButton.type = 'button';
             editButton.addEventListener('click', () => {
                 console.log("Botão de edição clicado");
@@ -48,7 +48,7 @@ function listfilmesCapa() {
 
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Excluir';
-            deleteButton.classList.add('botao'); // Adiciona a classe CSS ao botão de exclusão
+            deleteButton.classList.add('botao');
             deleteButton.addEventListener('click', () => {
                 delete_filme(filmes);
             });
@@ -70,9 +70,6 @@ function listfilmes(){
         filmeInfo.innerHTML = '';
         console.log(data);
         data.forEach(filmes =>{
-            // const p = document.createElement('p')
-            // p.innerHTML = ` nome: ${filmes.nome}  - genero: ${filmes.genero} - duracao: ${filmes.duracao} - data: ${filmes.data} - diretor: ${filmes.diretor} `
-            // filmeInfo.appendChild(p)
         });
     })
     .catch(error => console.error('Error', error));
@@ -158,7 +155,7 @@ function delete_filme(Filmes) {
     .catch(error => console.error('Erro:', error));
 }
 
-// Quando o usuário clica no 'x', fecha o modal de cadastro
+
 span_cadastro.onclick = function() {
     modal_cadastro.style.display = "none";
 };
