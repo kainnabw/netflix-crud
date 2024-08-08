@@ -21,15 +21,15 @@ function listfilmesCapa() {
         filmeList.innerHTML = '';
         console.log(data);
         data.forEach(filmes => {
-            const div = document.createElement('div'); // Container para cada filme        
+            const div = document.createElement('div');     
             div.style.display = 'flex';
             div.style.flexDirection = 'column';
             div.style.marginRight = '10px';
             
             const img = document.createElement('img');
             img.src = filmes.capa;
-            img.style.width = 'auto'; // Defina a largura desejada
-            img.style.height = '260px'; // Mantenha a proporção da imagem
+            img.style.width = 'auto'; 
+            img.style.height = '260px'; 
 
             // Adiciona um event listener ao clicar na imagem
             img.addEventListener('click', function() {
@@ -38,7 +38,7 @@ function listfilmesCapa() {
 
             const editButton = document.createElement('button');
             editButton.textContent = 'Editar';
-            editButton.classList.add('edit_button'); // Adiciona a classe CSS ao botão de edição
+            editButton.classList.add('edit_button'); 
             editButton.type = 'button';
             editButton.addEventListener('click', () => {
                 console.log("Botão de edição clicado");
@@ -48,7 +48,7 @@ function listfilmesCapa() {
 
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Excluir';
-            deleteButton.classList.add('delete_button'); // Adiciona a classe CSS ao botão de exclusão
+            deleteButton.classList.add('delete_button'); 
             deleteButton.addEventListener('click', () => {
                 delete_filme(filmes);
             });
